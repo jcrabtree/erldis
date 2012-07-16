@@ -532,7 +532,7 @@ handle_info({tcp, Socket, Data}, State) ->
       {stop, Reason, State}
 	end;
 handle_info({tcp_closed, Socket}, State=#redis{socket=Socket}) ->
-  {noreply, State#redis{socket=undefined}};
+	{noreply, State#redis{socket=undefined}};
 handle_info(_Info, State) ->
 	{noreply, State}.
 
